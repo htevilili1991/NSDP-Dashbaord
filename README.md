@@ -1,29 +1,78 @@
-# CPI Dashboard
+# NSDP Dashboard
 
-## Overview
-The CPI (Consumer Price Index) Dashboard is an interactive web application developed using R and Shiny. This dashboard provides insights and trends related to the CPI data for Vanuatu. It allows users to explore quarterly and annual CPI changes, visualizing the data through various interactive charts.
+The **NSDP Dashboard** is a dynamic web-based application designed to provide an intuitive and insightful overview of the National Sustainable Development Plan (NSDP) indicators. It focuses on the analysis of households affected by various shocks, helping decision-makers and stakeholders identify key areas requiring attention. The dashboard was developed as part of an **internal staff dashboard competition** at the Vanuatu Bureau of Statistics.
 
-### Key Features
-- **Dynamic Data Filters**: Filter CPI data by year, quarter, and location.
-- **Interactive Charts**: View quarterly and annual CPI changes with bar charts.
-- **Tab-based Layout**: Easy navigation through different sections, including a detailed dashboard and resource information.
+## Features
 
-## Technologies Used
-- **R**: The core programming language for building the app.
-- **Shiny**: For creating interactive web applications.
-- **bs4Dash**: For building the dashboard UI with Bootstrap 4.
-- **Highcharter**: For creating interactive charts and visualizations.
-- **rsconnect**: For deploying the Shiny app to shinyapps.io or other servers.
+### 1. **Interactive Data Visualizations**
+- **KPI Boxes**: Provides key performance indicators (KPIs) for total households affected, the most common shock type, and the percentage of households affected by the top 3 shocks.
+- **Charts**:
+  - Bar charts show the distribution of households affected by shock types.
+  - Pie charts illustrate the proportions of top 3 severe shocks.
+- **Geographic Visualization**: Interactive Leaflet map highlights the regional breakdown of shocks by province.
 
-## Setup & Installation
+### 2. **Data Filtering**
+- **Province Filter**: Allows users to filter data by specific provinces or view aggregated data for all provinces.
+- **Filterable Table**: An interactive data table with options for filtering and searching detailed data.
+
+### 3. **Data Export**
+- Export filtered data in multiple formats, including CSV, Excel, and PDF, for offline analysis.
+
+### 4. **Help and Guidance**
+- A dedicated “Help” button provides an interactive guide on how to use the dashboard features effectively.
+
+## Installation
 
 ### Prerequisites
-- R (version 4.0 or later)
-- RStudio (optional but recommended)
-- Internet connection to install R packages
+Ensure that the following are installed:
+- **R** (version 4.0 or later)
+- **RStudio** (optional, but recommended)
+- Required R packages:
+  - `shiny`
+  - `bs4Dash`
+  - `highcharter`
+  - `DT`
+  - `leaflet`
+  - `sf`
+  - `dplyr`
+  - `readxl`
+  - `jsonlite`
+  - `tidyr`
 
-### Installing Dependencies
-Install the necessary R packages by running the following command in your R console:
+### Setup Steps
+1. Clone or download this repository.
+2. Place the required data files in the `data/` directory:
+   - `numberHHAffectedBy.csv`
+   - `shockFigures.csv`
+3. Open the `app.R` file in RStudio.
+4. Install any missing packages using `install.packages()`.
+5. Run the app using the command:
+   ```R
+   shiny::runApp()
+   ```
+6. Open your web browser to the displayed URL to access the dashboard.
 
-```r
-install.packages(c("rsconnect", "shiny", "bs4Dash", "highcharter", "dplyr", "DBI", "RSQLite"))
+## How to Use
+
+### Navigation
+- Use the **sidebar menu** to switch between the following tabs:
+  - **Overview**: Displays KPIs, charts, and a geographic breakdown.
+  - **Impact of Shocks on HH**: Provides a detailed filterable table of data.
+- Use the **control bar** to filter data by province.
+
+### Features
+- **Charts and KPIs**: Hover over charts to view details, and observe KPIs for quick insights.
+- **Interactive Map**: Click on markers to view data specific to a province.
+- **Export Data**: Use the table’s export options to download filtered data.
+
+### Help
+- Click the “Help” button in the header for an interactive guide.
+
+## Acknowledgments
+This dashboard was developed as part of the **internal staff dashboard competition** organized by the Vanuatu Bureau of Statistics. It reflects our commitment to leveraging data and technology to support evidence-based decision-making.
+
+## License
+This project is licensed under the [MIT License](LICENSE).
+
+---
+
