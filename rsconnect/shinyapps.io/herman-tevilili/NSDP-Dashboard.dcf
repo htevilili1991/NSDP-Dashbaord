@@ -1,0 +1,12 @@
+name: NSDP-Dashboard
+title: NSDP-Dashboard
+username: herman-tevilili
+account: herman-tevilili
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 13555422
+bundleId: 9484956
+url: https://herman-tevilili.shinyapps.io/NSDP-Dashboard/
+version: 1
+asMultiple: FALSE
+asStatic: FALSE
